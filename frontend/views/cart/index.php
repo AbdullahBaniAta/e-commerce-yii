@@ -52,9 +52,7 @@
             </tbody>
         </table>
 
-        <div class="card-body text-right">
-            <a href="<?php echo \yii\helpers\Url::to(['/cart/checkout']) ?>" class="btn btn-primary">Checkout</a>
-        </div>
+        
         <?php else: ?>
 
             <p class="text-muted text-center p-5">There are no items in the cart</p>

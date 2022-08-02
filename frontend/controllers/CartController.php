@@ -63,6 +63,7 @@ class CartController extends \frontend\base\Controller
     public function actionAdd()
     {
         $id = \Yii::$app->request->post('id');
+        die($id."here");
         $product = Product::find()->id($id)->one();
         if (!$product) {
             throw new NotFoundHttpException("Product does not exist");
@@ -137,7 +138,7 @@ class CartController extends \frontend\base\Controller
     public function actionChangeQuantity()
     {
         $id = \Yii::$app->request->post('id');
-        $product = Product::find()->id($id)->published()->one();
+        $product = Product::find()->id($id)->one();
         if (!$product) {
             throw new NotFoundHttpException("Product does not exist");
         }

@@ -1,7 +1,14 @@
 <link href="http://localhost/syara/advanced/frontend/web/assets/bf3496d6/css/bootstrap.css" rel="stylesheet">
-<link href="http://localhost:9000/syara/advanced/frontend/web/css/site.css" rel="stylesheet">
-<?php
 
+
+<?php
+$this->registerCssFile("@web/css/site.css", [
+    'media' => 'print',
+], 'css-print-theme');
+$this->registerJsFile(
+    '@web/build/app.js',
+    ['depends' => [\yii\web\JqueryAsset::class]]
+);
 /* @var $this \yii\web\View */
 
 /* @var $content string */
@@ -37,7 +44,7 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-expand-lg navbar-dark bg-dark fixed-top',
+            'class' => 'navbar-expand-lg navbar-dark bg-dark ',
         ],
     ]);
     $menuItems = [
